@@ -39,4 +39,17 @@ describe 'adding a new post do' do
     expect(page).to have_content 'Post saved'
   end
 
+describe 'editing a saved post' do
+
+  it 'can be edited on the Edit form' do
+    create_a_post
+    visit '/posts'
+    click_link 'Hello world'
+    click_link 'Edit'
+    fill_in 'Body', with: 'Lorem ipso'
+    click_button 'Save post'
+    expect(page).to have_content 'Lorem ipso'
+  end
+end
+
 end
