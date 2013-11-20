@@ -18,5 +18,10 @@ describe Post do
     end
   end
 
+  it 'has comments' do
+    expect(post).to respond_to :comments
+  end
+
 
 end
+

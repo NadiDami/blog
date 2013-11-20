@@ -5,6 +5,22 @@
 <p>
   <%= @post.body %>
 </p>
+<p>
+  <%= pluralize @post.comments.count, 'comment' %>
+</p>
+
+<ul>
+  <% @post.comments.each do |comment| %>
+    <li><p><%= comment.body %></p></li>
+  <% end %>
+</ul>
+
+<%= form_for([@post, @post.comments.build]) do |f| %>
+    <%= f.text_area :body, placeholder: 'Add a comment' %><br/>
+    <%= f.submit 'Post comment' %>
+  <% end %>
+
+<br/>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Delete', post_path(@post), method: :delete, data: {confirm: 'Are you sure you want to delete this post?'} %> | 

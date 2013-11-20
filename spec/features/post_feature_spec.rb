@@ -1,68 +1,71 @@
-
-
 def create_a_post
   Post.create(title: 'Hello world', body: 'Helllooooo')
 end
 
+describe 'posting' do
 
-describe 'blog posts index page' do
 
-  it 'should display a list of posts' do
-    create_a_post
-    visit '/posts'
-    expect(page).to have_content "Hello world"
+  describe 'blog posts index page' do
+
+    it 'can be reached from the homepage' do
+      visit '/'
+      click_link 'My blog'
+      expect(page).to have_content 'Posts'
+    end
+
+    context 'viewing format of posts' do
+
+      before do
+        create_a_post
+        visit '/posts' 
+      end
+
+      it 'should display a list of posts' do
+        expect(page).to have_content "Hello world"
+      end
+
+      it 'can show individual posts' do
+        click_link "Hello world"
+        expect(page).to have_content 'Helllooooo'
+      end
+
+    end
+
   end
 
-  it 'can be reached from the homepage' do
-    visit '/'
-    click_link 'My blog'
-    expect(page).to have_content 'Posts'
+  describe 'adding a new post do' do
+
+    it 'can be added from the New Post form' do
+      visit '/posts/new'
+      fill_in 'Title', :with => 'Hello world'
+      fill_in 'Body', with: 'Lorem ipsum'
+      click_button 'Save post'
+      expect(page).to have_content 'Post saved'
+    end
+
   end
 
-  it 'can show individual posts' do
-    create_a_post
-    visit '/posts'
-    click_link "Hello world"
-    expect(page).to have_content 'Helllooooo'
-  end
+  context 'making changes to saved posts' do
 
-end
+    before do
+      create_a_post
+      visit '/posts'
+      click_link 'Hello world'
+    end
 
-describe 'adding a new post do' do
+    it 'can be edited on the Edit form' do
+      click_link 'Edit'
+      fill_in 'Body', with: 'Lorem ipso'
+      click_button 'Save post'
+      expect(page).to have_content 'Lorem ipso'
+    end
 
-  it 'can be added from the New Post form' do
-    visit '/posts/new'
-    fill_in 'Title', :with => 'Hello world'
-    fill_in 'Body', with: 'Lorem ipsum'
-    click_button 'Save post'
 
-    expect(page).to have_content 'Post saved'
-  end
+    it 'can be deleted with the Delete button' do
+      click_link 'Delete'
+      expect(page).not_to have_content 'Lorem ipsum'
+    end
 
-end
-
-describe 'editing a saved post' do
-
-  it 'can be edited on the Edit form' do
-    create_a_post
-    visit '/posts'
-    click_link 'Hello world'
-    click_link 'Edit'
-    fill_in 'Body', with: 'Lorem ipso'
-    click_button 'Save post'
-    expect(page).to have_content 'Lorem ipso'
-  end
-
-end
-
-describe 'deleting a saved post' do
-
-  it 'can be deleted with the Delete button' do
-    create_a_post
-    visit '/posts'
-    click_link 'Hello world'
-    click_link 'Delete'
-    expect(page).not_to have_content 'Lorem ipsum'
   end
 
 end
