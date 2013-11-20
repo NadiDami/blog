@@ -39,6 +39,8 @@ describe 'adding a new post do' do
     expect(page).to have_content 'Post saved'
   end
 
+end
+
 describe 'editing a saved post' do
 
   it 'can be edited on the Edit form' do
@@ -50,6 +52,17 @@ describe 'editing a saved post' do
     click_button 'Save post'
     expect(page).to have_content 'Lorem ipso'
   end
+
 end
+
+describe 'deleting a saved post' do
+
+  it 'can be deleted with the Delete button' do
+    create_a_post
+    visit '/posts'
+    click_link 'Hello world'
+    click_link 'Delete'
+    expect(page).not_to have_content 'Lorem ipsum'
+  end
 
 end

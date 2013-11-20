@@ -13,7 +13,7 @@ class PostsController < ApplicationController
 
     if @post.save
       flash[:notice] = "Post saved"
-      redirect_to '/posts'
+      redirect_to posts_path
     else
       render 'new'
     end
@@ -35,6 +35,13 @@ class PostsController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+
+    redirect_to posts_path
   end
 
 end
