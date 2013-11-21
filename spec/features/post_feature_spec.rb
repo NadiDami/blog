@@ -1,3 +1,5 @@
+require 'spec_helper'
+
 def create_a_post
   Post.create(title: 'Hello world', body: 'Helllooooo')
 end

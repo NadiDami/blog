@@ -22,6 +22,51 @@ describe Post do
     expect(post).to respond_to :comments
   end
 
+  it 'has votes' do
+    expect(post).to respond_to :votes
+  end
+
+  describe '.votes_total' do
+ 
+    it 'should correctly calculate positive votes count' do
+      post = Post.create(title: 'Hello world')
+      post.stub upvotes: [double(:vote), double(:vote)]
+      post.stub downvotes: [double(:vote)]
+      expect(post.votes_total).to eq 1
+    end
+
+    it 'should correctly calculate positive votes count' do
+      post = Post.create(title: 'Hello world')
+      post.stub upvotes: [double(:vote)]
+      post.stub downvotes: [double(:vote), double(:vote)]
+      expect(post.votes_total).to eq -1
+    end
+
+    it 'should return nil if there are no votes' do
+      post = Post.create(title: 'Hello world')
+      post.stub upvotes: []
+      post.stub downvotes: []
+      expect(post.votes_total).to be_nil
+    end
 
 end
 
+  context '.sorted_by_votes' do
+
+    it 'puts highly voted posts first' do
+      popular = Post.new(title: 'Hello Hammy', body: 'Hello Hammy')
+      less_popular = Post.new(title: 'Hello Natty', body: 'Hello Natty')
+
+      popular.stub votes_total: 8
+      less_popular.stub votes_total: 3
+
+      Post.stub(all: [less_popular, popular])
+
+      # Post.sorted_by_votes
+      expect(Post.sorted_by_votes.first).to eq popular
+    end
+
+  end
+
+
+end

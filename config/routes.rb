@@ -5,7 +5,8 @@ Blog::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   resources :posts do
-    resources :comments
+    resources :comments, only: [:new, :create]
+    resources :votes
   end
 
   root to: 'welcome#index'

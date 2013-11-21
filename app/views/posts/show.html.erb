@@ -9,9 +9,7 @@
 
 <h4>Comments</h4>
 
-<p>
-  <%= pluralize @post.comments.count, 'comment' %>
-</p>
+<%= pluralize @post.comments.count, 'comment' %>
 
 <%= render 'comments/comment' %>
 <%= render 'comments/form' %>

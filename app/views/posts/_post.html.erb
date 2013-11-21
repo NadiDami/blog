@@ -1,0 +1,8 @@
+<% @posts.each do |post| %>
+  <h2><%= link_to post.title, post %></h2>
+  <p><%=post.body %></p>
+
+  <h4 class="votes-count"><%= post.votes_total %></h4>
+  <%= button_to '⬆', post_votes_path(post, direction: 'up') %>
+  <%= button_to '⬇', post_votes_path(post, direction: 'down') %>
+<% end %>
