@@ -33,4 +33,10 @@ Blog::Application.configure do
 
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
+
+  config.after_initialize do
+    time = Time.local(2013,11,20,10,0,0)
+    Timecop.freeze(time)
+  end
+  
 end

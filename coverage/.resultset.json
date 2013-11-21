@@ -75,6 +75,12 @@
         null,
         null,
         1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
         null
       ],
       "/Users/NadiDami/Documents/MakersAcademy/rails_intro/blog/config/initializers/backtrace_silencers.rb": [
@@ -274,6 +280,10 @@
         null,
         null,
         null,
+        null,
+        null,
+        null,
+        null,
         1,
         null,
         1,
@@ -453,7 +463,6 @@
         null,
         1,
         null,
-        null,
         1,
         null,
         null,
@@ -473,8 +482,8 @@
         null,
         null,
         1,
-        30,
-        5,
+        21,
+        4,
         null,
         null,
         1,
@@ -484,19 +493,46 @@
         1,
         null,
         1,
-        30,
+        20,
         null,
         null,
         1,
-        30,
+        20,
         null,
         null,
         null
       ],
       "/Users/NadiDami/Documents/MakersAcademy/rails_intro/blog/spec/models/vote_spec.rb": [
+        1,
+        null,
+        3,
+        3,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
         null,
         null,
         null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/NadiDami/Documents/MakersAcademy/rails_intro/blog/app/models/vote.rb": [
+        1,
+        1,
+        22,
+        22,
         null,
         null
       ],
@@ -559,11 +595,6 @@
         1,
         null
       ],
-      "/Users/NadiDami/Documents/MakersAcademy/rails_intro/blog/app/models/vote.rb": [
-        1,
-        1,
-        null
-      ],
       "/Users/NadiDami/Documents/MakersAcademy/rails_intro/blog/app/models/comment.rb": [
         1,
         1,
@@ -600,6 +631,6 @@
         null
       ]
     },
-    "timestamp": 1384961523
+    "timestamp": 1384941600
   }
 }

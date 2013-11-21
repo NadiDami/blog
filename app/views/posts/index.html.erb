@@ -1,3 +1,4 @@
+<%= link_to 'Homepage', welcome_index_path %>
 <h1>Posts</h1>
 <%= flash[:notice] %>
 
@@ -5,4 +6,3 @@
 
 <%= render 'post' %>
 
-<!--  <%= render @posts.sort_by { |post| post.votes.count }.reverse %>  -->

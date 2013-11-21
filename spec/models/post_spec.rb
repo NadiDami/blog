@@ -62,7 +62,6 @@ end
 
       Post.stub(all: [less_popular, popular])
 
-      # Post.sorted_by_votes
       expect(Post.sorted_by_votes.first).to eq popular
     end
 
