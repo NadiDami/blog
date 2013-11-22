@@ -1,9 +1,9 @@
 <% @posts.each do |post| %>
   <h2><%= link_to post.title, post %></h2>
   <p><%=post.body %></p>
-  <p><%# post.created_at %></p>
+  <p><%= post.created_at.strftime('%H:%M %d/%m/%g') %></p>
 
-  <h4 class="votes-count"><%= post.votes_total %></h4>
-  <%= button_to '⬆', post_votes_path(post, direction: 'up') %>
-  <%= button_to '⬇', post_votes_path(post, direction: 'down') %>
+  <h4 class="votes-count" data-id='<%= post.id %>'><%= post.votes_total %></h4>
+  <%= vote_button post, 'up', '⬆' %>
+  <%= vote_button post, 'down', '⬇' %>
 <% end %>

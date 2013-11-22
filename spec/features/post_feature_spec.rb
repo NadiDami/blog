@@ -31,9 +31,9 @@ describe 'posting' do
         expect(page).to have_content 'Helllooooo'
       end
 
-      # it 'should display the time of each post' do
-      #   expect(page).to have_content '10:00 1/11/13'
-      # end
+      it 'should display the time of each post' do
+        expect(page).to have_content '10:00 20/11/13'
+      end
 
     end
 

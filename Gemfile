@@ -40,6 +40,10 @@ group :development, :test do
   gem 'simplecov', :require => false
 end
 
+gem 'poltergeist'
+
+gem 'database_cleaner'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 

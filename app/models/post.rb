@@ -6,14 +6,13 @@ class Post < ActiveRecord::Base
   validates :title, presence: true,
     length: {minimum: 2}
 
-
   def votes_total
     return nil if (upvotes + downvotes).empty?
     upvotes.size - downvotes.size
   end
 
   def self.sorted_by_votes
-    all.sort_by(&:votes_total).reverse
+    all.sort_by { |p| p.votes_total || 0 }.reverse
   end
 
   private
