@@ -487,7 +487,7 @@
         null,
         1,
         22,
-        2,
+        3,
         null,
         null,
         1,
@@ -497,11 +497,11 @@
         1,
         null,
         1,
-        19,
+        20,
         null,
         null,
         1,
-        19,
+        20,
         null,
         null,
         null
@@ -533,8 +533,8 @@
       "/Users/NadiDami/Documents/MakersAcademy/rails_intro/blog/app/models/vote.rb": [
         1,
         1,
-        21,
-        21,
+        22,
+        22,
         null,
         null
       ],
@@ -597,14 +597,9 @@
         1,
         null
       ],
-      "/Users/NadiDami/Documents/MakersAcademy/rails_intro/blog/app/controllers/votes_controller.rb": [
-        1,
-        null,
+      "/Users/NadiDami/Documents/MakersAcademy/rails_intro/blog/app/models/comment.rb": [
         1,
         1,
-        1,
-        1,
-        null,
         null,
         null
       ],
@@ -614,9 +609,15 @@
         null,
         null
       ],
-      "/Users/NadiDami/Documents/MakersAcademy/rails_intro/blog/app/models/comment.rb": [
+      "/Users/NadiDami/Documents/MakersAcademy/rails_intro/blog/app/controllers/votes_controller.rb": [
+        1,
+        null,
         1,
         1,
+        1,
+        1,
+        1,
+        null,
         null,
         null
       ],
@@ -633,6 +634,6 @@
         null
       ]
     },
-    "timestamp": 1384941600
+    "timestamp": 1384941624
   }
 }

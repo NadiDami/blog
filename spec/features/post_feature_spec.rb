@@ -11,7 +11,7 @@ describe 'posting' do
 
     it 'can be reached from the homepage' do
       visit '/'
-      click_link 'My blog'
+      click_link 'Enter'
       expect(page).to have_content 'Posts'
     end
 

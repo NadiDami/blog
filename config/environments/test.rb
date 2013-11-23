@@ -36,7 +36,7 @@ Blog::Application.configure do
 
   config.after_initialize do
     time = Time.local(2013,11,20,10,0,0)
-    Timecop.freeze(time)
+    Timecop.travel(time)
   end
   
 end
