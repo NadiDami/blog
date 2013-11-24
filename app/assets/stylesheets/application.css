@@ -49,4 +49,27 @@ border-collapse: collapse;
 border-spacing: 0;
 }
 
+.post_heading {
+  position: absolute;
+  top: 80px;
+  display: inline;
+  left: 450px; 
+}
+
+.post_item {
+  position: absolute;
+  display: block;
+  padding: 10px 10px 10px 10px;
+  top: 50%;
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  height: 80px;
+  padding: 0 0 10px 0;
+  z-index: 2;
+  background-color: #83396a;
+}
+
 

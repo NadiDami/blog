@@ -1,8 +1,13 @@
-<%= link_to 'Homepage', welcome_index_path %>
-<h1>Posts</h1>
-<%= flash[:notice] %>
+<%= stylesheet_link_tag "posts" %>
 
-<%= link_to 'New post', new_post_path %>
+<div class="header">
+  <%= link_to 'Homepage', welcome_index_path, :class => "homepage" %>
+  <%= link_to 'New post', new_post_path, :class => "new_post_button" %>
+</div>
+
+<h1 class="post_heading">Posts</h1>
+
+<%= flash[:notice] %>
 
 <%= render 'post' %>
 

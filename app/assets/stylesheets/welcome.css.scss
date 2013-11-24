@@ -13,7 +13,7 @@ h1 {
 }
 
 body {
-  margin: 15%;
+  margin: 0%;
   background-color: #833945;
   text-align: center;
 }
@@ -26,4 +26,19 @@ a {
   border-radius: 4px;
   text-decoration: none;
   background-color: #398352;
+  margin: 40px 40px 40px 40px;
+
 }
+
+  .homepage {
+    position: fixed;
+    top: -5px;
+    left: 0px;
+      }
+
+  .new_post_button {
+    position: fixed;
+    top: -5px;
+    left: 170px;
+  }
+
