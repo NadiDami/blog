@@ -1,6 +1,6 @@
 <% @posts.each do |post| %>
   <div class="post_item">
-    <h2><%= link_to post.title, post %></h2>
+    <h2><%= link_to post.title, post, :class => "post_title" %></h2>
     <p><%=post.body %></p>
     <p><%= post.created_at.strftime('%H:%M %d/%m/%g') %></p>
 
