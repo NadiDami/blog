@@ -33,15 +33,29 @@ a {
     margin: 20% 0 0 0 ;
   }
 
-  .homepage {
+.homepage {
     position: fixed;
     top: -5px;
     left: 0px;
       }
 
-  .new_post_button {
+.new_post_button {
     position: fixed;
     top: -5px;
     left: 170px;
   }
+
+ul.hmenu {
+  position: fixed;
+  top: 45px;
+  right: 30px;
+  z-index: 2;
+    li {
+    display: inline-block; 
+    width: 150px;
+    }
+
+}
+
+
 

@@ -44,6 +44,8 @@ gem 'poltergeist'
 
 gem 'database_cleaner'
 
+gem 'devise', github: 'plataformatec/devise'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
